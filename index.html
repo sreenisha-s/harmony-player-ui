@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harmony Player</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="player" id="player">
+  <div class="header">
+    <h2>Harmony Player</h2>
+    <div>
+      <i class="fa-solid fa-shuffle"></i>
+      <i class="fa-solid fa-rotate"></i>
+      <i class="fa-regular fa-heart"></i>
+    </div>
+  </div>
+
+  <div class="album">
+    <img src="https://images.squarespace-cdn.com/content/v1/5c588c15ab1a627fbc4e6604/f4be78f5-2945-4cb1-986f-f6a2137297c3/2023-06-06_Profile_Gower_BG+COMPRESSSED.jpg" alt="album">
+  </div>
+
+  <div class="info">
+    <h3>Midnight City</h3>
+    <p>M83</p>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="time">
+      <span>2:15</span>
+      <span>4:45</span>
+    </div>
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <i class="fa-solid fa-backward"></i>
+    <div class="play" id="playBtn">
+      <i class="fa-solid fa-play"></i>
+    </div>
+    <i class="fa-solid fa-forward"></i>
+  </div>
+
+  <div class="volume">
+    <i class="fa-solid fa-volume-high"></i>
+    <div class="volume-bar">
+      <div class="volume-level"></div>
+    </div>
+  </div>
+
+  <div class="upnext">
+    <h4>Up Next</h4>
+
+    <div class="track active">
+      <div>
+        <strong>Midnight City</strong><br>
+        <span>M83</span>
+      </div>
+      <span>4:45</span>
+    </div>
+
+    <div class="track">
+      <div>
+        <strong>Blinding Lights</strong><br>
+        <span>The Weeknd</span>
+      </div>
+      <span>3:22</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const playBtn = document.getElementById("playBtn");
+const player = document.getElementById("player");
+let playing = false;
+
+playBtn.onclick = () => {
+  playing = !playing;
+  player.classList.toggle("playing");
+  playBtn.innerHTML = playing
+    ? '<i class="fa-solid fa-pause"></i>'
+    : '<i class="fa-solid fa-play"></i>';
+};
+</script>
+
+</body>
+</html>
